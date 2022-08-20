@@ -12,6 +12,7 @@ app.get('/', (req: Request, res: Response) => {
   console.log(`result subtraction = ${subtraction(1, 2)}`);
   console.log(`result myObject.PI = ${myObject.PI}`);
   console.log(`result myObject.sayName = ${myObject.sayName()}`);
+
   res.send('Express + Typescript Server');
 });
 

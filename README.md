@@ -80,3 +80,5 @@ console.log(`result ${myObject.arthmetic.PI}`)
 const myDefault = require('./functions2');
 console.log(`result ${myDefault()}`)
 ```
+##### understanding-memory-leaks-node-js-apps
+https://blog.logrocket.com/understanding-memory-leaks-node-js-apps/
