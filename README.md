@@ -122,3 +122,36 @@ Snapshots:   0 total
 Time:        1.804 s, estimated 2 s
 Ran all test suites.
 ```
+
+#### What can it bundle?
+```bash
+npm i tsup -D
+
+// variable in node
+process.env.NODE_ENV=undefined || development || uat || stg || production
+
+// https://www.twilio.com/blog/working-with-environment-variables-in-node-js-html
+const debug = require('debug')('myApp:someComponent');
+debug('Here is a pretty object %o', { someObject: true });
+
+
+"scripts": {
+    // run test by config
+    "test": "jest --config jestconfig.json",
+    // build by default typescript tsc
+    "build": "npx tsc",
+    // build debug and watch by tsup
+    "buildDebugByTsup": "tsup index.ts --sourcemap --watch",
+    // build production minify by tsup
+    "buildByTsup": "tsup index.ts --minify",
+    // run on production
+    "start": "NODE_ENV=production node dist/index.js",
+    // run debug and watch by typescript
+    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts"
+    // run debug and watch with (tsup, with env)
+    "devByTsup": "tsup index.ts --sourcemap --watch --onSuccess \"NODE_ENV=development node -r dotenv/config --inspect dist/index.js dotenv_config_path=.env.test\""
+    // run debug express
+    "start:express:debug": "DEBUG=* NODE_ENV=development nodemon --watch '**/*.ts' --exec 'ts-node' index.ts",
+  }
+
+```
