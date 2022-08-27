@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "api_dev": "DEBUG=* NODE_ENV=development  nodemon --watch '**/*.ts' --exec 'ts-node' src/api/app.ts",
     "test": "jest --config jestconfig.json",
     "build": "npx tsc",
     "buildDebugByTsup": "tsup index.ts --sourcemap --watch",
