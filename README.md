@@ -152,3 +152,10 @@ debug('Here is a pretty object %o', { someObject: true });
   }
 
 ```
+
+https://www.npmjs.com/package/nodejs-health-checker
+```javascript
+// npm i nodejs-health-checker
+// npm install @mongodb-helpers/health-check mongodb
+
+```
